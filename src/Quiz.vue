@@ -26,8 +26,8 @@
           v-on:click="change(index)">
         </div>
       </div>
+      </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -97,7 +97,7 @@ export default {
       this.selected = index
     },
     check () {
-      if (this.selected) {
+      if (this.selected || this.selected === 0) {
         this.message = ''
         this.checked = true
         this.correct = this.quizData[this.qIndex].ansIndex === this.selected
@@ -106,8 +106,8 @@ export default {
       }
     },
     change (index) {
-      if (index) {
-        this.qIndex = index
+      if (index || index === 0) {
+          this.qIndex = index
       } else {
         let newIndex = this.qIndex
         while (newIndex === this.qIndex) {
@@ -117,6 +117,7 @@ export default {
       }
       this.checked = false
       this.selected = undefined
+      this.message = ''
     }
   }
 }
