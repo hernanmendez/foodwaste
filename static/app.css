@@ -190,10 +190,13 @@ div.ans:hover .check.fill {
   background-color: #1e88e5;
 }
 
-.code {
-  color:#ea1c0d;
-  font-size: 30px;
+.code::after {
+  font-style: normal;
+  display: inline;
+  color:#db3c0b;
+  font-size: 24px;
   position: relative;
-  top: 3px;
+  top: 1px;
   letter-spacing: -3px;
+  content: '</>';
 }

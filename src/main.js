@@ -18,6 +18,3 @@ new Vue({
   components: { Cform },
   template: '<Cform/>'
 })
-
-document.querySelectorAll('.code')[0].appendChild(document.createTextNode('</>'))
-document.querySelectorAll('.code')[1].appendChild(document.createTextNode('</>'))
