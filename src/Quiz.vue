@@ -1,4 +1,5 @@
 <template>
+<div id="Quiz">
   <div class="container">
     <div class="form">
       <div class="row">
@@ -26,8 +27,9 @@
           v-on:click="change(index)">
         </div>
       </div>
-      </div>
     </div>
+  </div>
+</div>
 </template>
 
 <script>
@@ -107,7 +109,7 @@ export default {
     },
     change (index) {
       if (index || index === 0) {
-          this.qIndex = index
+        this.qIndex = index
       } else {
         let newIndex = this.qIndex
         while (newIndex === this.qIndex) {
