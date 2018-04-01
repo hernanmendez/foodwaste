@@ -9,7 +9,7 @@
       <hr />
       <div class="ans-list">
         <div v-for="(ans, index) in quizData[qIndex].pAns" :key="`${index}qform`" v-on:click="select(index)" class="ans">
-          <div :class="`check ${index === selected ? 'fill' : ''}`"></div>
+          <div :class="`check ${index === selected ? 'selec' : ''}`"></div>
           <input type="radio" :checked="index === selected" />
           <span :class="`ans ${checked ? (quizData[qIndex].ansIndex === index ? 'green' : 'red') : ''}`">
             {{ ans }}

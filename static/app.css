@@ -26,6 +26,10 @@
        url('./fonts/roboto-v18-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -42,11 +46,11 @@ div.all {
 
 #Quiz {
   flex-grow: 1;
-  background: #f1f1f1;
+  background: linear-gradient(135deg, #FFA000 50%, rgb(255, 174, 34) 50%);
 }
 
 nav {
-  background-color: rgb(34, 34, 34);
+  background-color: #222;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -64,6 +68,7 @@ p {
 
 a {
   text-decoration: none;
+  color: rgb(100, 180, 255);
 }
 
 hr {
@@ -75,9 +80,22 @@ footer {
   font-size: 20px;
   text-align: center;
   padding-bottom: 8px;
-  background: #f3f3f3;
+  color: white;
+  background: #222;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.16);
 }
+
+.code::after {
+  font-style: normal;
+  display: inline;
+  color:#FFA000;
+  font-size: 24px;
+  position: relative;
+  top: 1px;
+  letter-spacing: -3px;
+  content: '</>';
+}
+
 
 .title {
   font-size: 32px;
@@ -87,18 +105,26 @@ footer {
 }
 
 .nav-group {
-  display: flex;
-  align-items: center;
-  background-color: rgb(130, 18, 158);
-  padding: 0 10px;
+  height: 10px;
 }
 
-.nav-group > p {
-  font-size: 22px;
+.nav-group > div {
+  display: flex;
+  align-items: center;
+  background-color: #82129e;
+  padding: 0 10px;
+  position: relative;
+  height: 55px;
+  box-shadow: 0 4px 10px 2px rgba(34, 34, 34, 0.70);
+}
+
+.nav-group > div > p {
+  font-size: 20px;
 }
 
 .logo {
-  height: 35px;
+  height: 45px;
+  margin-left: 5px;
 }
 
 .container {
@@ -154,11 +180,11 @@ span.ans {
 }
 
 span.red {
-  color: #f44336;
+  color: #f32929;
 }
 
 span.green {
-  color: #7cbb42;
+  color: #4b8d0d;
 }
 
 
@@ -171,7 +197,7 @@ div.ans .check{
   display: block;
   position: absolute;
   box-sizing: border-box;
-  border: 2px solid #444;
+  border: 2px solid #666;
   border-radius: 100%;
   height: 13px;
   width: 13px;
@@ -182,15 +208,15 @@ div.ans .check{
 }
 
 div.ans:hover .check {
-  border: 2px solid #222;
+  border: 2px solid black;
 }
 
-.check.fill {
-  background-color: #444;
+div.ans .check.selec {
+  background-color: #666;
 }
 
-div.ans:hover .check.fill {
-  background-color: #222;
+div.ans:hover .check.selec {
+  background-color: black;
 }
 
 .btn {
@@ -229,15 +255,4 @@ div.ans:hover .check.fill {
 
 .bar.selected {
   background-color: #1e88e5;
-}
-
-.code::after {
-  font-style: normal;
-  display: inline;
-  color:#db3c0b;
-  font-size: 24px;
-  position: relative;
-  top: 1px;
-  letter-spacing: -3px;
-  content: '</>';
 }
